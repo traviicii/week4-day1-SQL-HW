@@ -40,10 +40,16 @@ WHERE last_name = 'Williams';
 
 --// 5. What store employee (get the id) sold the most rentals?
 
+--correct solution, 
 -- Employee #2 made the most sales
-SELECT COUNT(staff_id), staff_id
+SELECT COUNT(DISTINCT payment_id), staff_id
 FROM payment
-GROUP BY staff_id;
+GROUP BY staff_id
+
+-- previously incorrect solution
+-- SELECT COUNT(staff_id), staff_id
+-- FROM payment
+-- GROUP BY staff_id;
 
 --// 6. How many different district names are there?
 
